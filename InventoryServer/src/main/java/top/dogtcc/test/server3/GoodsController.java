@@ -43,4 +43,39 @@ public class GoodsController {
         return "OK";
     }
 
+
+    @RequestMapping("/insertraw")
+    public String insert() {
+
+        Good good = new Good();
+        good.setId(10);
+        good.setAmount(10);
+        good.setName("test");
+
+        repository.insert(good);
+
+        return "OK";
+    }
+
+
+    @RequestMapping("/updateraw")
+    public String update() {
+
+        Good good = new Good();
+        good.setId(10);
+        good.setAmount(10);
+        good.setName("test");
+
+        repository.save(good);
+
+        return "OK";
+    }
+
+    @RequestMapping("/clear")
+    public void clear() {
+
+        repository.deleteAll();
+
+    }
+
 }

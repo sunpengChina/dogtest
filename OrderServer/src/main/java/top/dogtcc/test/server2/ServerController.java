@@ -25,14 +25,20 @@ public class ServerController {
 
     @RequestMapping("/insert")
     @DogCallAnnotation(TccHandlerClass = DbTccHandler.class)
-    public String insert(@RequestBody Orderdao order) {
+    public Orderdao insert(@RequestBody Orderdao order) {
 
-        Orderdao ret = orderRepository.create(order);
+        orderRepository.create(order);
 
-       // int i = 10/0;
+        orderRepository.create(new Orderdao());
 
-        return String.valueOf(ret.getId());
+        return order;
     }
 
+    @RequestMapping("/clear")
+    public void clear() {
+
+       orderRepository.deleteAll();
+
+    }
 
 }

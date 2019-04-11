@@ -2,6 +2,7 @@ package top.dogtcc.test.server1;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import top.dogtcc.core.annotation.DogTccAnnotation;
 
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,57 +23,73 @@ public class BffController {
     @Autowired
     GoodServerClient goodServerClient;
 
-
-    @RequestMapping("/insertorder/{userid}/{goodid}/{num}")
-    @DogTccAnnotation(Name = "insertorder")
-    public String insertorder(@PathVariable String userid, @PathVariable int goodid, @PathVariable int num) throws Exception {
-
-        OrderDao orderDao = new OrderDao();
-        orderDao.setNums(num);
-        orderDao.setUserId(userid);
-        orderDao.setGoodId(goodid);
+    @Autowired
+    Server server;
 
 
-        orderServerClient.insert(orderDao);
+    @RequestMapping("/buytest")
+    public String buy() throws Exception {
 
-        return  orderDao.toString();
+         goodServerClient.clear();
 
-    }
+         orderServerClient.clear();
 
-    @RequestMapping("/insertgood/{id}/{name}/{mount}")
-    @DogTccAnnotation(Name = "insertgood")
-    public String insertgood(@PathVariable int id,@PathVariable String name, @PathVariable int mount) throws Exception {
+        /**
+         * 前面是个事务是成功的
+         */
+        for(int i = 0 ; i< 2; i++){
 
-        Good good = new Good();
-        good.setId(id);
-        good.setName(name);
-        good.setAmount(mount);
+            Good good = new Good();
+            good.setId(i);
+            good.setName("");
+            good.setAmount(i);
 
-        goodServerClient.insert(good);
+            OrderDao orderDao = new OrderDao();
+            orderDao.setId(i);
+            orderDao.setNums(i);
+            orderDao.setGoodId(i);
+            orderDao.setUserId("");
 
-        return  good.toString();
-    }
+            try {
+
+                server.buyTest(orderDao,good);
+
+            }catch (Exception e){
+
+                System.out.println(e);
+            }
+
+        }
+
+        /**
+         *  因为不可重入插入mongo;mysql是自生成主键，mongo不是
+         */
+        for(int i = 0 ; i< 2; i++){
+
+            Good good = new Good();
+            good.setId(i);
+            good.setName("");
+            good.setAmount(i);
+
+            OrderDao orderDao = new OrderDao();
+            orderDao.setId(i);
+            orderDao.setNums(i);
+            orderDao.setGoodId(i);
+            orderDao.setUserId("");
+
+            try {
+
+                server.buyTest(orderDao,good);
+
+            }catch (Exception e){
+
+                System.out.println(e);
+            }
+
+        }
 
 
 
-    @RequestMapping("/buy/{userid}/{goodid}/{num}")
-    @DogTccAnnotation(Name = "insertorder")
-    public String buy(@PathVariable String userid, @PathVariable int goodid, @PathVariable int num) throws Exception {
-
-        OrderDao orderDao = new OrderDao();
-        orderDao.setNums(num);
-        orderDao.setUserId(userid);
-        orderDao.setGoodId(goodid);
-
-        orderServerClient.insert(orderDao);
-
-
-        Good good = new Good();
-        good.setName("testGood");
-        good.setAmount(num);
-        good.setId(goodid);
-
-       goodServerClient.update(good);
 
         return  "OK";
 
