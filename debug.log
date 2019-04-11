@@ -1,0 +1,3 @@
+2019-04-11 14:14:30  [ main-EventThread:0 ] - [ INFO ]  WatchedEvent state:SyncConnected type:None path:null
+2019-04-11 14:14:30  [ main-EventThread:16 ] - [ INFO ]  WatchedEvent state:SyncConnected type:None path:null
+2019-04-11 14:14:30  [ main:24 ] - [ INFO ]  server1: started
