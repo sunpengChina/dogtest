@@ -18,6 +18,7 @@ public interface OrderServerClient {
     @RequestMapping("/clear")
     void clear() ;
 
-
+    @RequestMapping("/user")
+    void user() ;
 
 }

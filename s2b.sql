@@ -24,7 +24,24 @@ CREATE TABLE `orderdao` (
   `good_id` int(50) DEFAULT NULL,
   `nums` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=106 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=710 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Table structure for table `orderdaon` */
+
+CREATE TABLE `orderdaon` (
+  `user_id` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `good_id` int(11) DEFAULT NULL,
+  `nums` int(11) DEFAULT NULL,
+  `id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*Table structure for table `user` */
+
+CREATE TABLE `user` (
+  `firstname` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `secondname` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `something` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

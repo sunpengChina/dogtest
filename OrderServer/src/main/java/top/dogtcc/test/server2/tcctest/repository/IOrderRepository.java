@@ -1,4 +1,4 @@
-package top.dogtcc.test.server2.repository;
+package top.dogtcc.test.server2.tcctest.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import top.dogtcc.test.server2.dao.Orderdao;

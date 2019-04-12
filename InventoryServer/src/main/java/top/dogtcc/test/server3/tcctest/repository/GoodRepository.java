@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import top.dogtcc.database.spring.mongo.DogMongoRepository;
 import top.dogtcc.test.server3.dao.Good;
 
+
 @Component
 public class GoodRepository extends DogMongoRepository<Good, Integer> {
 
@@ -14,7 +15,7 @@ public class GoodRepository extends DogMongoRepository<Good, Integer> {
     IGoodRepository repository;
 
     @Override
-    public MongoRepository<Good, Integer> repository() {
+    public MongoRepository< Good, Integer> repository() {
         return repository;
     }
 }

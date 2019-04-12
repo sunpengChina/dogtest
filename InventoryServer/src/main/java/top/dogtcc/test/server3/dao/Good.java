@@ -1,7 +1,6 @@
-package top.dogtcc.test.server3.dao;
+package top.dogtcc.test.server3.tcctest.dao;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 import top.dogtcc.database.core.annotation.DogTable;
 import top.dogtcc.database.core.annotation.QueryArg;
 

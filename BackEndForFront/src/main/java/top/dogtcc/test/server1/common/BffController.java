@@ -27,6 +27,15 @@ public class BffController {
     Server server;
 
 
+
+    @RequestMapping("/user")
+    @DogTccAnnotation(Name ="user")
+    public  void user(){
+
+        orderServerClient.user();
+    }
+
+
     @RequestMapping("/buytest")
     public String buy() throws Exception {
 
@@ -94,6 +103,7 @@ public class BffController {
         return  "OK";
 
     }
+
 
 
 
