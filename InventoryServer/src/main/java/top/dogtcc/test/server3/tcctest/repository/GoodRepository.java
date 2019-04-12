@@ -1,4 +1,4 @@
-package top.dogtcc.test.server3.repository;
+package top.dogtcc.test.server3.tcctest.repository;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

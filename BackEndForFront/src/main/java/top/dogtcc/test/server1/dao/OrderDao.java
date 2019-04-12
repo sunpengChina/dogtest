@@ -2,10 +2,6 @@ package top.dogtcc.test.server1.dao;
 
 
 
-import top.dogtcc.database.core.annotation.DogTable;
-import top.dogtcc.database.core.annotation.QueryArg;
-
-
 import java.io.Serializable;
 
 public class OrderDao implements Serializable {

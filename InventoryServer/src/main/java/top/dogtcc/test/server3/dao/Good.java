@@ -1,4 +1,4 @@
-package top.dogtcc.test.server3.tcctest.dao;
+package top.dogtcc.test.server3.dao;
 
 import lombok.Data;
 import top.dogtcc.database.core.annotation.DogTable;
