@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <version>1.0.1-RELEASE</version>
+        <version>1.0.2-RELEASE</version>
         <groupId>top.dogtcc</groupId>
         <artifactId>test</artifactId>
     </parent>
@@ -12,7 +12,7 @@
 
     <groupId>top.dogtcc.test</groupId>
     <artifactId>OrderServer</artifactId>
-    <version>1.0.1-RELEASE</version>
+    <version>1.0.2-RELEASE</version>
 
     <properties>
         <java.version>1.8</java.version>
@@ -23,13 +23,13 @@
         <dependency>
             <groupId>top.dogtcc</groupId>
             <artifactId>common</artifactId>
-            <version>1.0.1-RELEASE</version>
+            <version>1.0.2-RELEASE</version>
         </dependency>
 
         <dependency>
             <groupId>top.dogtcc.database.spring</groupId>
             <artifactId>jpa</artifactId>
-            <version>1.0.1-RELEASE</version>
+            <version>1.0.2-RELEASE</version>
         </dependency>
 
 
